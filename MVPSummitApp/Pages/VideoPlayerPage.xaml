@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pagefactory="clr-namespace:Xamvvm;assembly=Xamvvm.Forms" 
+             xmlns:o="clr-namespace:Octane.Xam.VideoPlayer;assembly=Octane.Xam.VideoPlayer" x:Class="MVPSummitApp.VideoPlayerPage">
+
+<Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="270" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+
+		<o:VideoPlayer x:Name="VPlayer"  Grid.Row="0" FillMode="ResizeAspect"  />
+		<StackLayout Grid.Row="1">
+		  <Button Text="X" FontSize="60" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Clicked="Handle_Clicked"  />
+		</StackLayout>
+</Grid>
+</ContentPage>

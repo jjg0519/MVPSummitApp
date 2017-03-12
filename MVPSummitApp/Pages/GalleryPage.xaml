@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"  x:Class="MVPSummitApp.GalleryPage">
+	<ContentPage.Content>
+		<StackLayout x:Name="GalleryStack">	<cv:CarouselView x:Name="GalleryCV"  >
+            <cv:CarouselView.ItemTemplate>
+              <DataTemplate>
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+							<ffimageloading:CachedImage  Aspect="AspectFill"
+							Source="{Binding PhotoURL}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                </Grid>
+              </DataTemplate>
+            </cv:CarouselView.ItemTemplate>
+          </cv:CarouselView>
+		  <Button x:Name="btnClose" Text="X" FontSize="60" Clicked="Handle_Clicked" VerticalOptions="EndAndExpand" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
