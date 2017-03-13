@@ -128,10 +128,10 @@
       <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Octane.Xam.VideoPlayer">
-      <HintPath>..\Components\video-player-1.2.3\lib\ios-unified\Octane.Xam.VideoPlayer.dll</HintPath>
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.3.0\lib\Xamarin.iOS10\Octane.Xam.VideoPlayer.dll</HintPath>
     </Reference>
     <Reference Include="Octane.Xam.VideoPlayer.iOS">
-      <HintPath>..\Components\video-player-1.2.3\lib\ios-unified\Octane.Xam.VideoPlayer.iOS.dll</HintPath>
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.3.0\lib\Xamarin.iOS10\Octane.Xam.VideoPlayer.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -194,12 +194,6 @@
     <BundleResource Include="Resources\location1.png" />
     <BundleResource Include="Resources\location2.png" />
     <BundleResource Include="Resources\location3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="video-player">
-      <Version>1.2.3</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="..\MVPSummitApp\MVPSummitApp.projitems" Label="Shared" Condition="Exists('..\MVPSummitApp\MVPSummitApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -114,10 +114,10 @@
       <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.9\lib\MonoAndroid10\FFImageLoading.Forms.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Octane.Xam.VideoPlayer.Android">
-      <HintPath>..\Components\video-player-1.2.3\lib\android\Octane.Xam.VideoPlayer.Android.dll</HintPath>
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.3.0\lib\MonoAndroid10\Octane.Xam.VideoPlayer.Android.dll</HintPath>
     </Reference>
     <Reference Include="Octane.Xam.VideoPlayer">
-      <HintPath>..\Components\video-player-1.2.3\lib\android\Octane.Xam.VideoPlayer.dll</HintPath>
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.3.0\lib\MonoAndroid10\Octane.Xam.VideoPlayer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -154,12 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renders\" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="video-player">
-      <Version>1.2.3</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="..\MVPSummitApp\MVPSummitApp.projitems" Label="Shared" Condition="Exists('..\MVPSummitApp\MVPSummitApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
