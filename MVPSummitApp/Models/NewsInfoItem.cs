@@ -43,6 +43,8 @@ namespace MVPSummitApp
 			set { SetField(ref newsList, value); }
 		}
 
+
+
 	}
 }
 

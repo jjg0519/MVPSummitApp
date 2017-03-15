@@ -15,32 +15,33 @@ namespace MVPSummitApp
 		public SchedulePageModel()
 		{
 			IsLoading = false;
-			LoadData();
+				LoadData();
+			//}
 		}
 
 		public async Task LoadData()
 		{
-
-			if (IsLoading) return;
-			IsLoading = true;
-			try
-			{
-				var resultList = await API.LoadData(API.ScheduleList);
-				var schduleItems = JsonConvert.DeserializeObject<ObservableCollection<SchduleItem>>(resultList);
-
+				if (IsLoading) return;
+				IsLoading = true;
+				try
+				{
+					var resultList = await API.LoadData(API.ScheduleList);
+					var schduleItems = JsonConvert.DeserializeObject<ObservableCollection<SchduleItem>>(resultList);
 
 
-				SchduleItems = from p in schduleItems
-							   orderby p.SessionGroup
-							   group p by p.SessionGroup into ListGroup
-							   select new Grouping<string, SchduleItem>(ListGroup.Key, ListGroup);
-			}
-			catch (Exception ex)
-			{
-				var page = new ContentPage();
-				var result = page.DisplayAlert("加载出错", "数据加载出错，请检查网络", "确认");
-			}
-            IsLoading = false;
+
+					SchduleItems = from p in schduleItems
+								   orderby p.SessionGroup
+								   group p by p.SessionGroup into ListGroup
+								   select new Grouping<string, SchduleItem>(ListGroup.Key, ListGroup);
+				}
+				catch (Exception ex)
+				{
+					var page = new ContentPage();
+					var result = page.DisplayAlert("加载出错", "数据加载出错，请检查网络", "确认");
+				}
+				IsLoading = false;
+			//}
 
 		}
 

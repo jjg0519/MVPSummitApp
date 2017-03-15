@@ -160,6 +160,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Renders\" />
     <Folder Include="Assets.xcassets\LaunchImage.imageset\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -171,6 +172,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renders\SelectedTabPageRenderer.cs" />
     <Compile Include="Renders\CustomListViewCellRenderer.cs" />
+    <Compile Include="Utils\NetworkConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\location.png" />
@@ -194,6 +196,11 @@
     <BundleResource Include="Resources\location1.png" />
     <BundleResource Include="Resources\location2.png" />
     <BundleResource Include="Resources\location3.png" />
+    <BundleResource Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <Import Project="..\MVPSummitApp\MVPSummitApp.projitems" Label="Shared" Condition="Exists('..\MVPSummitApp\MVPSummitApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

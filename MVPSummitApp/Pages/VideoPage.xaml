@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pagefactory="clr-namespace:Xamvvm;assembly=Xamvvm.Forms" x:Class="MVPSummitApp.VideoPage" Title="视频" Icon="video.png">
 	<ContentPage.Content>
+  <StackLayout>		
+			<ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
 
 	     <ListView x:Name="VideoListView" RowHeight="120"  HasUnevenRows="false" ItemsSource="{Binding VideoItems}" ItemSelected="Handle_ItemSelected" > 
 
@@ -23,5 +25,6 @@
 					  </DataTemplate>
 				</ListView.ItemTemplate>
 		</ListView>	
+			</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

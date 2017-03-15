@@ -3,6 +3,10 @@ using Xamvvm;
 using Newtonsoft.Json;
 using System.Windows.Input;
 using Xamarin.Forms;
+#if __ANDROID__
+using Android.Graphics;
+using System.Threading.Tasks;
+#endif
 
 namespace MVPSummitApp
 {
@@ -37,9 +41,18 @@ namespace MVPSummitApp
 			set { SetField(ref newsID, value); }
 		}
 
+#if __ANDROID__
+		Task<Bitmap> bitMapItem;
+		public Task<Bitmap> BitMapItem
+		{
+			get { return bitMapItem; }
+			set { SetField(ref bitMapItem, value); }
+
+		}
+#endif
 
 
-		
+
 	}
 }
 

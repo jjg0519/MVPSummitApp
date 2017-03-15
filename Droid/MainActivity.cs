@@ -12,7 +12,8 @@ using Octane.Xam.VideoPlayer.Android;
 
 namespace MVPSummitApp.Droid
 {
-	[Activity(Label = "MVPSummitApp.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme",  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	//[Activity(Label = "MVPSummitApp.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity(Label = "MVPSummitApp.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme",  ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle bundle)

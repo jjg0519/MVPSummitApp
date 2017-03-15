@@ -19,7 +19,6 @@ namespace MVPSummitApp
 
 			VPlayer.Source = URL;
 			this.BackgroundColor = Color.FromRgb(0, 34, 78);
-
 		}
 	}
 }

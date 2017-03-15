@@ -4,6 +4,7 @@
 	<ContentPage.Content  BackgroundColor="#0078d7">
 	  <StackLayout x:Name="sl">
 
+			<ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
 	     <ListView x:Name="NewsInfoList" RowHeight="210" SeparatorVisibility="None"  HasUnevenRows="false" ItemsSource="{Binding NewsItems}"  > 
 	
 				<ListView.ItemTemplate>
@@ -36,7 +37,7 @@
 										    <ContentView Rotation="90" >
 
 							<ffimageloading:CachedImage  
-							Source="{Binding PhotoURL}"  Margin="0,-30,0,0" HeightRequest="150"/>
+							Source="{Binding PhotoURL}"  Margin="0,-30,0,0" HeightRequest="150" DownsampleToViewSize="true"/>
 																
 										    </ContentView>
 										   </ViewCell>

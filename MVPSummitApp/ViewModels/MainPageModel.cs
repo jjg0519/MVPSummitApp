@@ -11,6 +11,8 @@ namespace MVPSummitApp
 	{
 		public MainPageModel()
 		{
+		//	Show();
+
 		}
 	}
 }

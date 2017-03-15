@@ -27,18 +27,20 @@ namespace MVPSummitApp
 
 			var mainPage = this.GetPageFromCache<MainPageModel>() as MainPage;
 
-			var schedulePage = this.GetPageFromCache<SchedulePageModel>() as SchedulePage;
-			var locationPage = this.GetPageFromCache<LocationPageModel>() as LocationPage;
-			var newsPage = this.GetPageFromCache<NewsPageModel>() as NewsPage;
-			var videoPage = this.GetPageFromCache<VideoPageModel>() as VideoPage;
+			//mainPage.DisplayAlert("1", "1", "1");
 
-			mainPage.Children.Add(schedulePage);
+			//var schedulePage = this.GetPageFromCache<SchedulePageModel>() as SchedulePage;
+			//var locationPage = this.GetPageFromCache<LocationPageModel>() as LocationPage;
+			//var newsPage = this.GetPageFromCache<NewsPageModel>() as NewsPage;
+			//var videoPage = this.GetPageFromCache<VideoPageModel>() as VideoPage;
 
-			mainPage.Children.Add(locationPage);
+			//mainPage.Children.Add(schedulePage);
 
-			mainPage.Children.Add(newsPage);
+			//mainPage.Children.Add(locationPage);
 
-			mainPage.Children.Add(videoPage);
+			//mainPage.Children.Add(newsPage);
+
+			//mainPage.Children.Add(videoPage);
 
 			//mainPage.BarBackgroundColor = Color.FromRgb(0, 34, 78);
 
@@ -60,6 +62,18 @@ namespace MVPSummitApp
 		protected override void OnStart()
 		{
 			// Handle when your app starts
+
+
+
+			//var networkConnection = DependencyService.Get<INetworkConnection>();
+			//networkConnection.CheckNetworkConnection();
+			//var networkStatus = networkConnection.IsConnected;
+
+			//if (networkStatus == false)
+			//{
+			//	var page = new ContentPage();
+			//	page.DisplayAlert("加载出错", "数据加载出错，请检查网络", "确认");
+			//}
 		}
 
 		protected override void OnSleep()

@@ -27,14 +27,31 @@ namespace MVPSummitApp
 		}
 		public async Task LoadData()
 		{
-			var resultList = await API.LoadData(API.NewsList);
-			NewsItems = JsonConvert.DeserializeObject<ObservableCollection<NewsInfoItem>>(resultList);
+			if (IsLoading) return;
+			IsLoading = true;
+			try
+			{
+				var resultList = await API.LoadData(API.NewsList);
+				NewsItems = JsonConvert.DeserializeObject<ObservableCollection<NewsInfoItem>>(resultList);
+			}
+			catch (Exception ex)
+			{
+				var page = new ContentPage();
+				var result = page.DisplayAlert("加载出错", "数据加载出错，请检查网络", "确认");
+			}
+			IsLoading = false;
 		}
 
 		public ObservableCollection<NewsInfoItem> NewsItems
 		{
 			get { return GetField<ObservableCollection<NewsInfoItem>>(); }
 			set { SetField(value); }
+		}
+		bool isLoading;
+		public bool IsLoading
+		{
+			get { return isLoading; }
+			set { SetField(ref isLoading, value); }
 		}
 
 

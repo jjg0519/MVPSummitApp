@@ -64,6 +64,8 @@
       <DependentUpon>VideoPlayerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VideoPlayerPageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\INetworkConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ImageResizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />

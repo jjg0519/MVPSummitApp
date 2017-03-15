@@ -9,7 +9,7 @@
                     <RowDefinition />
                   </Grid.RowDefinitions>
 							<ffimageloading:CachedImage  Aspect="AspectFill"
-							Source="{Binding PhotoURL}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+							Source="{Binding PhotoURL}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" DownsampleToViewSize="true"/>
                 </Grid>
               </DataTemplate>
             </cv:CarouselView.ItemTemplate>

@@ -17,22 +17,29 @@ namespace MVPSummitApp
 			LoadData();
 
 
-			//ItemSelectedCommand = new BaseCommand<SelectedItemChangedEventArgs>((arg) =>
-			//{
-			//	var item = arg?.SelectedItem as VideoItem;
-
-
-
-			//	var pageToPush = this.GetPageAsNewInstance<VideoPlayerPageModel>();
-
-			//	this.PushModalPageAsync(pageToPush);
-
-			//});
 		}
 		public async Task LoadData()
 		{
-			var resultList = await API.LoadData(API.VideoList);
-			VideoItems = JsonConvert.DeserializeObject<ObservableCollection<VideoItem>>(resultList);
+			if (IsLoading) return;
+			IsLoading = true;
+			try
+			{
+				var resultList = await API.LoadData(API.VideoList);
+				VideoItems = JsonConvert.DeserializeObject<ObservableCollection<VideoItem>>(resultList);
+			}
+			catch (Exception ex)
+			{
+				var page = new ContentPage();
+				var result = page.DisplayAlert("加载出错", "数据加载出错，请检查网络", "确认");
+			}
+			IsLoading = false;
+		}
+
+		bool isLoading;
+		public bool IsLoading
+		{
+			get { return isLoading; }
+			set { SetField(ref isLoading, value); }
 		}
 
 		public ObservableCollection<VideoItem> VideoItems

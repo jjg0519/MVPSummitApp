@@ -8,9 +8,17 @@
                 <RowDefinition Height="*" />
               </Grid.RowDefinitions>
 
-		<o:VideoPlayer x:Name="VPlayer"  Grid.Row="0" FillMode="ResizeAspect"  />
+		<o:VideoPlayer x:Name="VPlayer"  Grid.Row="0" FillMode="ResizeAspect" AutoPlay="true" DisplayControls="true"  />
 		<StackLayout Grid.Row="1">
-		  <Button Text="X" FontSize="60" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Clicked="Handle_Clicked"  />
+		  <Button  x:Name="btnClose" BorderColor="Transparent"  BackgroundColor="Transparent"  VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Clicked="Handle_Clicked" Image="close.png" TextColor="Blue" WidthRequest="100" HeightRequest="100" BorderWidth="0">    
+
+    <Button.BorderRadius>
+        <!-- HACK: fixes a bug where border doesn't get draw unless there is a radius. -->
+        <OnPlatform x:TypeArguments="x:Int32">
+            <OnPlatform.Android>0</OnPlatform.Android>
+        </OnPlatform>
+    </Button.BorderRadius>
+		  </Button>		
 		</StackLayout>
 </Grid>
 </ContentPage>
