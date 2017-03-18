@@ -9,6 +9,8 @@ using Android.Widget;
 using Android.OS;
 using FFImageLoading.Forms.Droid;
 using Octane.Xam.VideoPlayer.Android;
+using Android.Content.Res;
+using FFImageLoading;
 
 namespace MVPSummitApp.Droid
 {
@@ -24,12 +26,40 @@ namespace MVPSummitApp.Droid
 			ToolbarResource = Resource.Layout.Toolbar;
 
 			base.OnCreate(bundle);
-			global::Xamarin.Forms.Forms.Init(this, bundle);
+			global::Xamarin.Forms.Forms.Init(this, bundle); 
 			FormsVideoPlayer.Init();
 
 			CachedImageRenderer.Init();
 
+			Application.RegisterComponentCallbacks(new LifecycleCallbacks());
+
 			LoadApplication(new App());
+		}
+
+
+	}
+	public class LifecycleCallbacks : Java.Lang.Object, IComponentCallbacks2
+	{
+
+
+		public void OnTrimMemory([GeneratedEnum] TrimMemory level)
+		{
+			//if (level == TrimMemory.UiHidden)
+			//{
+			//	Console.WriteLine("Backgrounded...");
+			//}    
+			ImageService.Instance.InvalidateMemoryCache();
+			GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+			//base.OnTrimMemory(level);
+
+		}
+
+		public void OnConfigurationChanged(Configuration newConfig)
+		{
+		}
+
+		public void OnLowMemory()
+		{
 		}
 	}
 }

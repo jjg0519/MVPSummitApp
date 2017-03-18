@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pagefactory="clr-namespace:Xamvvm;assembly=Xamvvm.Forms" x:Class="MVPSummitApp.VideoPage" Title="视频" Icon="video.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pagefactory="clr-namespace:Xamvvm;assembly=Xamvvm.Forms" x:Class="MVPSummitApp.VideoPage" Title="视频" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"  Icon="video.png">
 	<ContentPage.Content>
   <StackLayout>		
 			<ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
@@ -11,7 +11,7 @@
 					   <ViewCell  >
 						 <ContentView Padding="4" >	
 							<StackLayout Orientation="Horizontal">
-							   <Image Source="{Binding VideoImg}" WidthRequest="160" HeightRequest="90"  />
+							   <ffimageloading:CachedImage Source="{Binding VideoImg}" WidthRequest="160" HeightRequest="90" DownsampleToViewSize="true"  />
 							   <StackLayout Padding="4">
 									<Label Text="{Binding VideoName}" FontSize="18" Margin="2,10" />
 									<StackLayout Orientation="Horizontal" Padding="2">

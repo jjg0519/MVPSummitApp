@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MVPSummitApp.LocationPage" xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MVPSummitApp.LocationPage" xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
               Title="地图" Icon="location.png">
 	<ContentPage.Content>          
 		<cv:CarouselView x:Name="LocationCV" ItemsSource="{Binding Locations}">
@@ -9,7 +9,7 @@
                   <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                   </Grid.RowDefinitions>
-                  <Image Aspect="AspectFill" Source="{Binding ImgURL}" />
+                  <ffimageloading:CachedImage Aspect="AspectFill" Source="{Binding ImgURL}" />
                 </Grid>
               </DataTemplate>
             </cv:CarouselView.ItemTemplate>

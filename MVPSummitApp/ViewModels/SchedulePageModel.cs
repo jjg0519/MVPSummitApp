@@ -14,9 +14,20 @@ namespace MVPSummitApp
 	{
 		public SchedulePageModel()
 		{
-			IsLoading = false;
-				LoadData();
+			//IsLoading = false;
 			//}
+#if __ANDROID__
+			Load();
+#endif
+#if __IOS__
+			LoadData();
+#endif
+		}
+
+		public async Task Load()
+		{
+
+			await Task.Run(() => { LoadData(); });
 		}
 
 		public async Task LoadData()

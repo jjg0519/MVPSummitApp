@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using ModernHttpClient;
 
-
 namespace MVPSummitApp
 {
 	public static class API
@@ -20,7 +19,7 @@ namespace MVPSummitApp
 		{
 			// move layout under the status bar
 			string result = "";
-            using (var client = new HttpClient(new NativeMessageHandler()))
+			using (var client = new HttpClient(new NativeMessageHandler()))
             {
                  result = await client.GetStringAsync(url);
                 return result;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using FFImageLoading;
 using Xamarin.Forms;
 
 namespace MVPSummitApp
@@ -27,13 +28,21 @@ namespace MVPSummitApp
 			GalleryList = galleryList;
 
 
+
 			//var index = galleryList.IndexOf(selectedItem);
 
 			//this.GalleryCV.fo
 
 			this.GalleryCV.ItemsSource = GalleryList;
 
+			//LoadImage();
+
 			//this.GalleryCV.Position = 200;
+		}
+		async void LoadImage()
+		{
+
+			await ImageService.Instance.InvalidateDiskCacheAsync();
 		}
 
 		public ObservableCollection<NewsItem> GalleryList { get; set; }

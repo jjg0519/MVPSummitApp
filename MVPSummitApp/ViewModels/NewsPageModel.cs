@@ -33,6 +33,7 @@ namespace MVPSummitApp
 			{
 				var resultList = await API.LoadData(API.NewsList);
 				NewsItems = JsonConvert.DeserializeObject<ObservableCollection<NewsInfoItem>>(resultList);
+
 			}
 			catch (Exception ex)
 			{

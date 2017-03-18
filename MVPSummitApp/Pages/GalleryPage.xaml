@@ -9,12 +9,13 @@
                     <RowDefinition />
                   </Grid.RowDefinitions>
 							<ffimageloading:CachedImage  Aspect="AspectFill"
-							Source="{Binding PhotoURL}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" DownsampleToViewSize="true"/>
+							Source="{Binding PhotoURL}"  VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" DownsampleToViewSize="true"/>
                 </Grid>
               </DataTemplate>
             </cv:CarouselView.ItemTemplate>
           </cv:CarouselView>
-		  <Button x:Name="btnClose" Text="X" FontSize="60" Clicked="Handle_Clicked" VerticalOptions="EndAndExpand" />
+		  <Button x:Name="btnClose" Image="close.png"  Clicked="Handle_Clicked" BackgroundColor="Transparent" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="100" HeightRequest="100"  />
+				
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
