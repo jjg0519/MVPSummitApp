@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
 using Xamvvm;
 
@@ -10,6 +12,8 @@ namespace MVPSummitApp
 		{
 			InitializeComponent();
 
+
+			FlowListView.Init();
 
 			var factory = new XamvvmFormsFactory(this);
 			factory.RegisterTabbedPage<MainPageModel>(new Type[]
@@ -27,6 +31,13 @@ namespace MVPSummitApp
 
 			var mainPage = this.GetPageFromCache<MainPageModel>() as MainPage;
 
+
+
+			MainPage = new NavigationPage(mainPage)
+			{
+				BarBackgroundColor = Color.FromRgb(10, 79, 157),
+				BarTextColor = Color.White
+			};
 			//mainPage.DisplayAlert("1", "1", "1");
 
 			//var schedulePage = this.GetPageFromCache<SchedulePageModel>() as SchedulePage;
@@ -45,12 +56,6 @@ namespace MVPSummitApp
 			//mainPage.BarBackgroundColor = Color.FromRgb(0, 34, 78);
 
 			//mainPage.BarTextColor = Color.White;
-
-			MainPage = new NavigationPage(mainPage)
-			{
-				BarBackgroundColor = Color.FromRgb(10, 79, 157),
-				BarTextColor = Color.White
-			};
 
 			//MainPage = new NavigationPage(new MainPage())
 			//{

@@ -65,6 +65,8 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VideoPlayerPageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\INetworkConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NewsResultItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GalleryPageModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
